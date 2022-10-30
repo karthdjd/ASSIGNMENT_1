@@ -1,11 +1,11 @@
-module mux4_1(D0,D1,D2,D3,S1,S2,Y);
-  input D0,D1,D2,D3,S1,S2;
+module mux4_1(D0,D1,D2,D3,[1:0] S,Y);
+  input D0,D1,D2,D3,[1:0] S;
   output Y;
   wire w1,w2,w3,w4;
-  assign w1=D0 & S1 & S0;
-   assign w2=D1 & S1 & !S0;
-   assign w3=D2 & !S1 & S0;
-   assign w4=D3 & !S1 & !S0;
+  assign w1=D0 & S;
+   assign w2=D1 & S;
+   assign w3=D2 & S;
+   assign w4=D3 & S;
   assign Y=w1|w2|w3|w4;
 endmodule
   
