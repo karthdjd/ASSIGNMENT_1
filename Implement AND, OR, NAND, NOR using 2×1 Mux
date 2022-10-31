@@ -1,0 +1,19 @@
+module org (A, B, and_Y,or_Y,nor_Y,nand_Y);
+input A, B;
+output and_Y,or_Y,nor_Y,nand_Y;
+  reg and_Y,or_Y,nor_Y,,nand_Y;
+  always @ (A,B)begin
+    if(A==0)
+      and_Y=A;
+    or_Y=B;
+    nand_Y=B;
+    nor_Y=A;
+    else if(A==1)
+      and_Y=B;
+    or_Y=A;
+    nand_Y=A;
+    nor_Y=B;
+    
+  end
+  
+endmodule
