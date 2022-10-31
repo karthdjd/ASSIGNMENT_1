@@ -1,0 +1,14 @@
+module xorg (A, B, xor_Y,xnor_Y);
+input A, B;
+output xor_Y,xnor_Y;
+  reg xor_Y,xnor_Y;
+  always @ (A,B)begin
+    if(A==B)
+      xor_Y=0;
+      xnor_Y=1;
+    else 
+     xor_Y=B;
+     xnor_Y=0;
+   
+   end
+ endmodule
