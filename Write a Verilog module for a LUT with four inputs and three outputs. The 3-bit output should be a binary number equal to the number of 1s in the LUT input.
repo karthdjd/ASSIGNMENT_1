@@ -1,4 +1,4 @@
-module lut1 (in, out);
+module Lut1 (in, out);
 
 input [3:0] in;
 
