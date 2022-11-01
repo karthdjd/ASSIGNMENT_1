@@ -1,0 +1,43 @@
+module four_bit_ALU_tb();
+
+reg clk;
+reg [3:0] a;
+reg [3:0] b;
+reg [1:0] sel;
+wire [3:0] out;
+wire of;
+
+four_bit_alu uut(.a(a),
+		.b(b),
+		.sel(sel),
+		.out(out),
+		.of(of));
+
+
+initial forever
+begin
+	#5 clk = ~clk;
+end
+
+
+initial
+begin
+	clk = 1'b0;
+	a = 4'b0000;
+	b = 4'b0000;
+	sel = 2'b00;
+end
+
+
+
+always @(posedge clk)
+begin
+	a = $urandom;
+	b = $urandom;
+	sel = 2'b00;
+	#10 sel = 2'b01;
+	#20 sel = 2'b10;
+	#20 sel = 2'b11;
+end
+initial #70 $finish; 
+endmodule 
