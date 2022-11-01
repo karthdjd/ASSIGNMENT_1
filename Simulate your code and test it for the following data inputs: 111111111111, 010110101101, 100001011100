@@ -1,0 +1,21 @@
+module Lut_tb;
+
+reg [11:0] in;
+wire [3:0] count;
+
+Lut2 uut(.in(in),
+	.count(count));
+
+
+
+initial 
+begin
+	in =12'b100001011100;
+	
+	#5 in = 12'b010110101101;
+
+	#2 in = 12'b100001011100;
+end
+
+initial $display("time = %t input = %b  output = %b",$time, in,count);
+endmodule
